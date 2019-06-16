@@ -10,10 +10,11 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "lodash": "^4.17.10",
+    "marked": "^0.6.2",
     "moment": "^2.22.2",
     "morgan": "^1.9.0",
     "nodemailer": "^4.4.1",
-    "poet": "^2.0.3",
+    "poet": "^3.0.0",
     "request": "^2.87.0"
   },
   "devDependencies": {},
