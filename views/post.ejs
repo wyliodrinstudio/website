@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title><%= post.title %></title>
+  <!-- <meta name="keywords" content="<%= post.tags.join (' ')%>"> -->
+  <meta name="description" content="<%= post.description %>">
+  <meta property='og:image' content='/images/blog/<%= post.name %>/header.png'/>
+  <link rel="canonical" href="https://wyliodrin.com<%= post.url %>" />
+  
+  <% include libraries %>
+
+     </head>
+
+     <body class="blog-post">
+
+      <section id="top" class="top-side4 background parallax" style="background-image:url('/images/bg/blogbg.jpg');" data-img-width="1920" data-img-height="811" data-diff="100">
+        <% include menu %>
+        <div class="container">
+          <div class="row">
+            <div class="top-title">
+              <div class="blogpost-header">
+                <strong><h1><%= post.title %></h1></strong>
+                <div class="author-div text-center">
+                  <span class="author-blog2">by <strong><%= post.author %></strong></span>
+                  <span class="author-blog2">&nbsp;(<%= moment(post.date).fromNow() %>)</span>
+                </div>                
+              </div>
+            </div>         
+          </div>
+        </div>
+      </section>
+
+      <section class="blog-article">
+        <div class="headerimg">
+          <img src="/images/blog/<%= post.name %>/header.png">
+          <nav aria-label="breadcrumb" class="breadcrumb-box">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/blog">Blog posts</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><%= post.title %></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="container">
+          <%- post.content %>
+        </div>
+      </section>
+
+        <% include footer %>
+
+        <script src="/js/custom.js"></script>
+
+      </body>
+      </html>

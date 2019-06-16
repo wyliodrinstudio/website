@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wyliodrin - IoT Solutions for industry and education</title>
+  <meta name="google-site-verification" content="aVZUZ_uFbPkTcMjnh38hpOXNsPYbftEBivz20VbMjEA" />
+  <!-- <meta name="keywords" content="Wyliodrin, IoT, board"> -->
+  <meta name="description" content="Meet Wyliodrin, your next IoT expert. From IoT education to industrial IoT solutions, we want to help you take a step into the future.">
+  <link rel="canonical" href="https://wyliodrin.com" />
+  
+  
+  <% include libraries %>
+
+  <script src="/js/typed.min.js"></script>
+
+  <style type="text/css">
+  .typed-cursor{
+    opacity: 1;
+    animation: typedjsBlink 0.7s infinite;
+    -webkit-animation: typedjsBlink 0.7s infinite;
+    animation: typedjsBlink 0.7s infinite;
+  }
+  @keyframes typedjsBlink{
+    50% { opacity: 0.0; }
+  }
+  @-webkit-keyframes typedjsBlink{
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+  }
+
+  .typed-fade-out{
+    opacity: 0;
+    transition: opacity .25s;
+    -webkit-animation: 0;
+    animation: 0;
+  }
+</style>
+
+</head>
+
+<body class="indexpage loading">
+
+  <section id="top" class="top-side background parallax" style="background-image:url('/images/bg/homebg.jpg');" data-img-width="1920" data-img-height="1080" data-diff="100">
+    <% include menu %>
+    <div class="container" style="position: relative;">
+      <div class="header-btns">
+        <form>
+          <!-- <button type="submit"><img src="/images/link-icon.png">Wyliodrin STUDIO</button> -->
+          <div class="btn-group">
+            <button type="button" class="btn" style="padding-right: 10px;" onclick="event_studio_download(getPlatform ()); studio_download ();"><img src="/images/download-icon.png"><span id="studio"><span>Download </span>Wyliodrin STUDIO <%= studio.version %></span></button>
+            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <% for (var s in studio.downloads) { %>
+              <li><a href="<%= studio.downloads[s].download %>" onclick="event_studio_download('<%= s %>')">Wyliodrin STUDIO <%= studio.version %> <%= studio.downloads[s].title %></a></li>
+                      <% } %>
+              <li><a href="https://chrome.google.com/webstore/detail/wyliodrin-studio/eajalplbgimhaodcnncciojhbpcogkan" onclick="event_studio_download('chrome')">Chromebook</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="https://www.github.com/Wyliodrin/WyliodrinSTUDIO" onclick="event_studio_github()">Fork on gitHub</a></li>
+              <li><a href="https://studio.wyliodrin.com" onclick="event_more_info ('studio', 'download')">More info</a></li>
+            </ul>
+          </div>
+        </form>
+      </div>
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/notebook.png" />
+              </div>
+              <div class="col-md-6">
+                <div class="flextext">Welcome to <strong>Wyliodrin STUDIO</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/guides.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Connection guides for all <strong>supported boards</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/discover.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext"><strong>Discover boards</strong> and <strong>connect over the network</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/shell.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext"><strong>Shell</strong> for advanced users</div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/network.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Connect the board to the <strong>internet</strong> using the <strong>Network Manager</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/notebook.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Use the <strong>notebook</strong> to create documentation for your projects</div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/tasks.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Manage all the <strong>running processes</strong> on your board with the <strong>Task Manager</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/libraries.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Add or remove <strong>libraries</strong> with the <strong>Package Manager</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/projects.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Create a <strong>new project</strong> or start from an existing <strong>example</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/visual.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Use a <strong>Visual Programming</strong> language and see the <strong>generated Python code</strong>...</div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/programming.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">...or use a conventional <strong>programming language</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/dashboard.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Monitor sensor data using <strong>graphs</strong> in the <strong>Dashboard</strong></div>
+              </div>
+          </li>
+          <li>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <img src="/images/slide/run-arduino.png" />
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="flextext">Run project and <strong>flash the Arduino</strong></div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header-bottom4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 p1">
+                  <!-- <button type="submit"><img src="/images/link-icon.png">More info</button> -->
+                  <!--<div class="btn-group">
+                    <button type="button" onclick="event_studio_download(getPlatform ()); studio_download ();" class="btn" style="padding-right: 10px; border-right: 0;"><img src="/images/download-icon.png">Download</button>
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-left: 0;">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <% for (var s in studio.downloads) { %>
+                          <li><a href="<%= studio.downloads[s].download %>" onclick="event_studio_download('<%= s %>')">Wyliodrin STUDIO <%= studio.version %> <%= studio.downloads[s].title %></a></li>
+                                  <% } %>
+                                  <li><a href="https://chrome.google.com/webstore/detail/wyliodrin-studio/eajalplbgimhaodcnncciojhbpcogkan" onclick="event_studio_download('chrome')">Chromebook</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://www.github.com/Wyliodrin/WyliodrinSTUDIO" onclick="event_studio_github()">Fork on gitHub</a></li>
+            <li><a href="https://studio.wyliodrin.com" onclick="event_more_info ('studio', 'download')">More info</a></li>
+                    </ul>
+                  </div>-->
+              <div class="col-md-4 col-sm-12 col-xs-12 prod">
+                <div class="icon-prod text-center">
+                  <div>
+                    <span class="helper"></span>
+                    <img src="/images/secure-deployment.png" class="main-icon">
+                  </div>
+                  <h2 text-center>Local IDE</h2>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-xs-12 prod">
+                <div class="icon-prod text-center">
+                  <div>
+                    <span class="helper"></span>
+                    <img src="/images/premises.png" class="main-icon">
+                  </div>
+                  <h2 text-center>Easy board setup</h2>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-xs-12 prod">
+                <div class="icon-prod text-center">
+                  <div>
+                    <span class="helper"></span>
+                    <img src="/images/analytics.png" class="main-icon">
+                  </div>
+                  <h2 text-center>Data analyzing tools</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="modal fade loginmodal modal-noscrollbar in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="false">
+          <div class="modal-backdrop fade in"></div>
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModal">Log in or sign up to Wyliodrin CLOUD</h4>
+              </div>
+              <div class="modal-body">
+                <a href="https://projects.wyliodrin.com/login/facebook" target="_blank" onclick="event_cloud_download('facebook')"><img src="/images/sign-in-fb.png"></a>
+                <a href="https://projects.wyliodrin.com/login/github" target="_blank" onclick="event_cloud_download('github')"><img src="/images/sign-in-git.png"></a>
+                <a href="https://projects.wyliodrin.com/login/google" target="_blank" onclick="event_cloud_download('google')"><img src="/images/sign-in-gp.png"></a>
+                <a class="trylink" target="_blank" href="https://projects.wyliodrin.com/login/anonymous" tabindex="0" onclick="event_cloud_download('try')"><span>Try demo now!</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="seenon grey-bg" data-aos="fade-in" data-aos-duration="1000">
+        <div class="container">
+          <div class="col-md-2 col-sm-12 col-xs-12 seentext">As seen on:</div>
+          <div class="col-md-10 col-sm-12 col-xs-12">
+            <div class="col-md-3 col-sm-3 col-xs-12 center"><a href="http://lifehacker.com/wyliodrin-programs-the-raspberry-pi-with-a-drag-and-dro-1630107933" target="_blank"><img src="/images/lifehacker.png"></a></div>
+            <div class="col-md-3 col-sm-3 col-xs-12 center"><a href="http://makezine.com/2014/09/15/wyliodrin-cloud-programming-supports-pi-and-galileo/" target="_blank"><img src="/images/makezine.png"></a></div>
+            <div class="col-md-3 col-sm-3 col-xs-12 center"><a href="http://www.forbes.ro/articles/30-sub-30-programarea-o-joaca-de-copii_0_10326-15722" target="_blank"><img src="/images/forbes.png"></a></div>
+            <div class="col-md-3 col-sm-3 col-xs-12 center"><a href="https://jaxenter.de/wyliodrin-wido-und-wulianwang-m2m-minutes-608" target="_blank"><img src="/images/jaxenter.png"></a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <div class="col-md-12 col-sm-12 col-xs-12"><h3>Features</h3></div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="features-icon-box">
+              <div class="features-icon text-center"><img src="/images/features/rpi-128.png"></div>
+              <h4 class="text-center">Raspberry Pi compatible </h4>
+              <div class="features-icon-descr text-center"><p>Perfectly compatible with your Raspberry Pi device.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="features-icon-box">
+              <div class="features-icon text-center"><img src="/images/features/arduino-128.png"></div>
+              <h4 class="text-center">Arduino compatible </h4>
+              <div class="features-icon-descr text-center"><p>Connect your Arduino to the computer or the Raspberry Pi and upload firmware onto it.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="features-icon-box">
+              <div class="features-icon text-center"><img src="/images/features/program-wirelessly-icon-128-2.png"></div>
+              <h4 class="text-center">Program wirelessly</h4>
+              <div class="features-icon-descr text-center"><p>No need to have a wired connection to the device. Just connect it to the network, launch the IDE and start coding.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="features-icon-box">
+              <div class="features-icon text-center"><img src="/images/features/visual-streams-icon-128.png"></div>
+              <h4 class="text-center">Visual programming</h4>
+              <div class="features-icon-descr text-center"><p>No need for any programming language knowledge. You can use visual coding blocks to build your IoT applications.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="features-icon-box">
+              <div class="features-icon text-center"><img src="/images/features/suited-for-education-128.png"></div>
+              <h4 class="text-center">Suited for education </h4>
+              <div class="features-icon-descr text-center"><p>Design tutorials and exercises from within the platform and share them with your students. Run code snippets directly on the device.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="features-icon-box">
+              <div class="features-icon text-center"><img src="/images/features/shell-128.png"></div>
+              <h4 class="text-center">Shell</h4>
+              <div class="features-icon-descr text-center"><p>For advanced control over the device, you can open a shell connection to it.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="features-icon-box">
+              <div class="features-icon text-center"><img src="/images/features/schematics-128.png"></div>
+              <h4 class="text-center">Schematics</h4>
+              <div class="features-icon-descr text-center"><p>Attach the electronics schematic to the application so projects can be fully replicated when shared with others.</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="features-extra3">
+          <div class="container">
+            <div class="col-md-6 col-sm-12 col-xs-12 col-md-push-6 text-center extra-img" data-aos="zoom-out-left">
+              <img src="/images/display-wyliodrin.png" alt="Digilent" title="Ohio University">
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 col-md-pull-6 text-center" data-aos="zoom-out-right">
+              <div class="extra-info">
+                <h3>Bigger Projects</h3>
+                <p>Do you want to build complex projects or use a solution suited for teaching IoT to a class of student?  <strong>Contact us for a tailor made solution</strong>.</p>
+                <form action="/contact" class="right">
+                  <button type="submit"><img src="/images/link-icon.png">Contact us</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="features-extra grey-bg">
+          <div class="container">
+            <div class="col-md-12 col-sm-12 col-xs-12" data-aos="zoom-out">
+              <div class="extra-info text-center">
+                <img style="width: 200px; height:auto;" src="/images/opensource.png">
+                <h3 style="font-size: 32px; font-weight: 500; padding-bottom: 10px;">Interested to contribute to an open-source project?</h3>
+                <p style="padding-bottom: 40px;"><strong>Wyliodrin STUDIO can be the perfect start!</strong></p>
+                <p>Wyliodrin STUDIO is an open-source, web-based IDE designed to enable the programming of edge devices. Compatible with the Raspberry Pi, UDOO and other development boards, the platform is the prototyping tool which allows you to build a functional project with a couple of clicks. </p>
+                <p style="padding-top: 10px;">Find out more on <a href="https://github.com/Wyliodrin/WyliodrinSTUDIO" target="_blank"><strong>github</strong></a> or <a href="/contact"><strong>contact us!</strong></a></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+      <% include universities %>
+
+      <% include clients2 %>
+
+
+
+
+      <% include footer %>
+
+      <!--<pre id="output"></pre>-->
+
+      <script src="/js/custom.js"></script>
+
+      <script type="text/javascript">
+          $(window).on("load", function(){
+            $('.flexslider').flexslider({
+              animation: "fade",
+              startAt: "0",
+              slideshowSpeed: "4000",
+              touch: true,
+              controlNav: false,
+                start: function(slider){
+                  $('body').removeClass('loading');
+                }
+              });
+          });
+      </script>
+      
+      <!--<script>
+        document.addEventListener('DOMContentLoaded', function() {
+         var typed = new Typed('#typed', {
+          strings: ['Development platform', 'Training specialist', 'Deployment platform', 'Solution developer'],
+          typeSpeed: 30,
+          backSpeed: 10,
+          preStringTyped: function (arrayPos, self)
+          {
+            $('.icon').hide ();
+            $('#icon_'+arrayPos).show ();
+          },
+          backDelay: 4000,
+          smartBackspace: true,
+          loop: true
+        });
+
+       });
+
+        function toggleLoop(typed) {
+          if (typed.loop) {
+           typed.loop = false;
+         } else {
+           typed.loop = true;
+         }
+     }
+     
+    // console.log (getPlatform ());
+    //  alert (getPlatform ());
+    //  $('#output').text (JSON.stringify (navigator, null, 2));
+
+    if (getPlatform () === 'arm')
+    {
+      $('#studio').text ('Wyliodrin STUDIO');
+    }
+
+    
+     </script>-->
+
+   </body>
+   </html>

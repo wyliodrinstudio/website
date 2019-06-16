@@ -1,0 +1,26 @@
+<section class="top-msg" id="note" style="display: none;">
+	<div class="container">
+		<span>In light of the new EU regulation "GDPR", we have updated our <a href="/privacy">privacy policy</a>. In order to continue using this website you must acknowledge and agree with it. <button type="button" class="btn agree-btn agree">I agree</button></span>
+	</div>
+</section>
+<nav id="navv" class="navbar navbar-default" role="navigation">
+	<div class="container d-flex">
+	  <div id="branding" class="logo" style="flex:0 0 auto;"> <a class="navbar-brand " href="/" title="" rel="home"><img src="/images/logo-white.png"></a> </div>
+	  <button type="button" class="navbar-toggle collapsed mob-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+	  <div id="navbar" class="menu navbar-collapse collapse mob-menu-open" style="flex:1 1 auto;">
+			<ul class="nav navbar-nav pr-0 mr-0">
+				<li class="topbtn"><a href="#navv" class="page-scroll">Top</a></li>
+				<li><a href="/" class="<%= pagename==''?'active':'page-scroll' %>">Home</a></li>
+				<!--<li><a href="/iot-industry" class="<%= pagename=='iot-industry'?'active':'page-scroll' %>">IoT Industry</a></li>-->
+				<li><a href="/iot-features" class="<%= pagename=='iot-features'?'active':'page-scroll' %>">Features</a></li>
+				<li><a href="/iot-education" class="<%= pagename=='iot-education'?'active':'page-scroll' %>">Education</a></li>
+				<!--<li><a href="/iot-solutions" class="<%= pagename=='iot-solutions'?'active':'page-scroll' %>">IoT Solutions</a></li>-->
+				<!--<li><a href="/blog" class="<%= pagename=='blog' || pagename=='page'?'active':'page-scroll' %>">Blog</a></li>-->
+				<!--<li><a href="/docs" class="<%= pagename=='docs'?'active':'page-scroll' %>">Docs</a></li>-->
+				<!--<li><a href="/blog" class="page-scroll">Blog</a></li>-->
+				<li><a href="/contact" class="<%= pagename=='contact'?'active':'page-scroll' %>">Contact</a></li>
+			</ul>
+		<!--<div class="menu-mobile"> Menu</div>--> 
+	  </div>
+	</div>
+  </nav>

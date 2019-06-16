@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Contact Us</title>
+  <meta name="description" content="Tell us what we can do to help you.">
+  <link rel="canonical" href="https://wyliodrin.com/contact" />
+
+  <% include libraries %>
+
+</head>
+
+<body>
+
+  <section id="top" class="top-side3 background parallax" style="background-image:url('/images/bg/contactbg.jpg');" data-img-width="1920" data-img-height="811" data-diff="100">
+    <% include menu %>
+
+    <script>
+      function reset ()
+      {
+        $('#sent').hide ();
+        $('#error').hide ();
+      }
+
+
+      var recaptcha_response = '';
+      var verifyCallback = function (response)
+      {
+        recaptcha_response = response;
+        console.log (response);
+      };
+      var onloadCallback = function() {
+        grecaptcha.render('recaptcha', {
+          'sitekey' : '6LfpUjwUAAAAAKJkVHoz8lWCi6bc-3DjOhFmlU1V',
+          'callback' : verifyCallback,
+              // 'theme' : 'dark'
+            });
+      };
+
+
+
+      function email ()
+      {
+        try
+        {
+          event_contact('email_try');
+        }
+        catch (e)
+        {
+          
+        }
+        reset ();
+        $('#submit').attr ('disabled', true);
+        // console.log ('submit');
+        // console.log (recaptcha_response);
+        event_contact('mail');
+        $.ajax ({
+          type: 'POST',
+          url: '/email', 
+          data: JSON.stringify ( {
+            name: $('#fname').val (),
+            email: $('#email').val (),
+            phone_number: $('#phone_number').val (),
+            company: $('#company').val (),
+            message: $('#message').val (),
+            recaptcha: recaptcha_response
+          }),
+          contentType: 'application/json',
+          dataType: 'json'
+        }).done (function (done)
+        {
+          if (done.sent)
+          {
+            $('#sent').show ();
+            setTimeout (function ()
+            {
+              location.reload ();
+            }, 10000);
+            event_contact('email_try');
+          }
+          else
+          {
+            $('#error').show ();
+            $('#submit').attr ('disabled', false);
+            event_contact('email_error');
+          }
+        }).fail (function (err)
+        {
+          console.log (err);
+          $('#error').show ();
+          $('#submit').attr ('disabled', false);
+          event_contact('email_error');
+        });
+      }
+
+      $(function() {
+          // Get the form.
+          var form = $('#ajax-contact');
+
+          $(form).submit(function(event) {
+            event.preventDefault();
+            email ();
+              // Stop the browser from submitting the form.
+
+              // TODO
+            });
+
+          // TODO: The rest of the code will go here...
+        });
+      </script>	
+
+      <div class="header-bottom3">
+        <div class="container">
+          <div class="row">
+            <a href="https://www.facebook.com/wyliodrin" onclick="event_contact('facebook')" target="_blank" class="col-md-4 col-sm-4 col-xs-4 prod">
+              <div class="effectbg"></div>
+              <div class="icon-prod text-center">
+                <div>
+                  <span class="helper"></span>
+                  <img src="/images/facebook-icon.png" class="main-icon">
+                  <img src="/images/circle1.png" class="circle1" style="rotate(125deg); -webkit-transform: rotate(125deg); transform: rotate(125deg);">
+                  <img src="/images/circle2.png" class="circle2" style="rotate(305deg); -webkit-transform: rotate(305deg); transform: rotate(305deg);">
+                </div>
+                <h2 text-center>Facebook</h2>
+              </div>
+            </a>
+            <a href="https://twitter.com/wyliodrin" onclick="event_contact('twitter')" target="_blank" class="col-md-4 col-sm-4 col-xs-4 prod">
+              <div class="effectbg"></div>
+              <div class="icon-prod text-center">
+                <div>
+                  <span class="helper"></span>
+                  <img src="/images/twitter-icon.png" class="main-icon">
+                  <img src="/images/circle1.png" class="circle1" style="rotate(55deg); -webkit-transform: rotate(55deg); transform: rotate(55deg);">
+                  <img src="/images/circle2.png" class="circle2" style="rotate(185deg); -webkit-transform: rotate(185deg); transform: rotate(185deg);">
+                </div>
+                <h2 text-center>Twitter</h2>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/company/wyliodrin/" onclick="event_contact('linkedin')" target="_blank" class="col-md-4 col-sm-4 col-xs-4 prod">
+              <div class="effectbg"></div>
+              <div class="icon-prod text-center">
+                <div>
+                  <span class="helper"></span>
+                  <img src="/images/linkedin-icon.png" class="main-icon">
+                  <img src="/images/circle1.png" class="circle1" style="rotate(85deg); -webkit-transform: rotate(85deg); transform: rotate(85deg);">
+                  <img src="/images/circle2.png" class="circle2" style="rotate(225deg); -webkit-transform: rotate(225deg); transform: rotate(225deg);">
+                </div>
+                <h2 text-center>Linkedin</h2>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="phone"><img src="/images/phone.png"> +1 (310) 431-7938</div>
+          <h1>Contact us</h1>
+        </div>
+
+        <form name="ajax-contact" id="ajax-contact" class="ajax-contact" method="post" action="">
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input name="fname" id="fname" type="text" placeholder="Full Name*" class="input-lg" id="fname" required="">
+            <input name="email" id="email" type="email" placeholder="Email*" class="input-lg" id="email" required="">
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="text" placeholder="Phone Number" name="phone_number" id="phone_number" class="input-lg" id="phone">
+            <input type="text" placeholder="Company / Institute" name="company" id="company" class="input-lg" id="company">
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <textarea name="message" id="message" class="input-lg" placeholder="Message*" id="message" required=""></textarea>
+          </div>
+          <div  class="col-md-3 col-sm-6 col-xs-12 text-center">
+            <div id="recaptcha"></div>
+          </div>
+          <div class="col-md-9 col-sm-6 col-xs-12 text-center">
+            <button type="submit" id="submit" class="btn btn-lg"><img src="/images/mail-icon.png">Send message</button>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 message-sent" id="sent">
+            <div>Message successfully sent!</div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 message-fail" id="error">
+            <div>There was an error while trying to send the message!</div>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="contact-maps">
+      <div class="container">
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <a class="medalion left" style="background:url('/images/romania.png') center;" href="https://www.google.com/maps/place/Bulevardul+Iuliu+Maniu+6,+Bucure%C8%99ti+061344,+Romania/@44.4345007,26.046939,17z/data=!3m1!4b1!4m8!1m2!2m1!1sBulevardul+Iuliu+Maniu+6+Bucure%C8%99ti+061344+Romania!3m4!1s0x40b201c5c84ff55d:0x3405c6474f4fee16!8m2!3d44.4345007!4d26.0491277?hl=en-US" target="_blank"></a>
+          <div class="text-left left" style="padding:13% 0 0 10%">
+            <h4>Romania</h4>
+            <div>Iuliu Maniu 6</div>
+            <div>061072</div>
+            <div>Bucharest</div>
+            <div style="margin-top:10px;">+40 742 061 223</div>
+          </div>          
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <a class="medalion right" style="background:url('/images/sweden.png') center;" href="https://www.google.com/maps/place/Bredgatan+11,+252+25+Helsingborg,+Sweden/@56.0384147,12.694478,16z/data=!4m5!3m4!1s0x465233b43f3e2fcb:0xde28ea03639526f7!8m2!3d56.0381844!4d12.6985023?hl=en-US" target="_blank"></a>
+          <div class="text-left right" style="padding:13% 10% 0 0">
+            <h4>Sweden</h4>
+            <div>Bredgatan 11</div>
+            <div>252 25</div>
+            <div>Helsingborg</div>
+            <div style="margin-top:10px;">+46 72 922 41 72</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script src='//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer></script>
+
+    <% include footer %>
+
+    <script src="/js/custom.js"></script>
+
+    <script>
+      reset ();
+    </script>
+
+  <% include tawkto %>
+  
+  </body>
+  </html>

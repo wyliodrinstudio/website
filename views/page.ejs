@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wyliodrin Blog</title>
+  <!-- <meta name="keywords" content="Wyliodrin, IoT, IDE, Cloud, Studio, board"> -->
+  <meta name="description" content="Wyliodrin STUDIO is an IDE designed to suit the needs of both beginner and advanced users, that helps you develop IoT projects.">
+  <link rel="canonical" href="https://wyliodrin.com/blog<%if(page>1){%><%='/'+page%><%}%>" />
+  
+  <% include libraries %>
+
+     </head>
+
+     <body>
+
+      <section id="top" class="top-side4 background parallax" style="background-image:url('/images/bg/blogbg.jpg');" data-img-width="1920" data-img-height="811" data-diff="100">
+        <% include menu %>
+        <div class="container">
+          <div class="row">
+            <div class="top-title">
+              <div>
+                <h1>Welcome to <strong>our blog</strong><% if (page>1) { %> - page <%= page %> <% } %></h1>
+                <div class="author-div text-center"></div>
+              </div>
+            </div>         
+          </div>
+        </div>
+      </section>
+
+      <section class="blog">
+        <div>
+          <% if (!posts) posts = getPosts (0,3); for (post of posts) { %>
+            <% include post_snippet %>
+          <% } %>
+        </div>
+        <div class="pages">
+            <% include pages %>
+        </div>
+      </section>
+
+        <% include footer %>
+
+        <script src="/js/custom.js"></script>
+
+      </body>
+      </html>

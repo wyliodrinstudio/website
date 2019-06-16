@@ -1,0 +1,12 @@
+{{{
+  "title": "What are these EDGE devices?",
+  "tags": ["iot", "sensors", "cloud", "edge", "fog"],
+  "description": "There is a lot of discussion lately in the IoT field about edge, or fog, devices. Let's explotre a little but what these devices are.",
+  "author": "Alexandru Radovici",
+  "category": "iot",
+  "date": "11-12-2018"
+}}}
+
+When the IoT term appeard a few years ago, everybody started thinking about connecting any device to the Internet. Whether is was a simple Arduino with
+a temperature senzor, or a motor that lifts a barrier at the parking lot, everything started to be connected to the Internet. I don;t think this is what
+IoT is all about, so

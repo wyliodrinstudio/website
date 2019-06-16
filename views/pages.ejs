@@ -1,0 +1,5 @@
+<% if (getPageCount () > 1) { %>
+	<% for (nr = 1; nr <= getPageCount (); nr++) { %>
+		<a href="<%=pageURL(nr)%>" class="<%= (page==nr)?'active':''%>"><%=nr%></a>
+	<% } %>
+<% } %>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Raspberry Pi Programming</title>
+  <!-- <meta name="keywords" content="Wyliodrin, IoT, IDE, Cloud, Studio, board"> -->
+  <meta name="description" content="Wyliodrin STUDIO is an IDE designed to suit the needs of both beginner and advanced users, that helps you develop IoT projects.">
+  <link rel="canonical" href="https://wyliodrin.com/iot-features" />
+  
+  <% include libraries %>
+
+     </head>
+
+     <body>
+
+      <section id="top" class="top-side2 background parallax" style="background-image:url('/images/bg/prototypingbg.jpg');" data-img-width="1920" data-img-height="811" data-diff="100">
+        <% include menu %>
+        <div class="container">
+          <div class="row">
+            <div class="top-title">
+              <div>
+                <h1><strong>Developing</strong> your own <strong>IoT project</strong> from scratch <br>can be tough without <strong>the right IDE</strong></h1>
+              </div>
+            </div>         
+          </div>
+        </div>
+
+        <div class="header-bottom2">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-sm-12 col-xs-12 prod p1">
+                <div class="details-prod left text-center dp1">
+                  <img src="/images/wstudio-text.png">
+                  <ul class="details-list">
+                    <li>local IDE</li>
+                    <li>easy board setup</li>
+                    <li>data analyzing tools</li>
+                  </ul>
+                  <form class="left">
+                    <!-- <button type="submit"><img src="/images/link-icon.png">More info</button> -->
+                    <div class="btn-group">
+                      <button type="button" onclick="event_studio_download(getPlatform ()); studio_download ();" class="btn" style="padding-right: 10px; border-right: 0;"><img src="/images/download-icon.png">Download</button>
+                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border-left: 0;">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu">
+                          <% for (var s in studio.downloads) { %>
+                            <li><a href="<%= studio.downloads[s].download %>" onclick="event_studio_download('<%= s %>')">Wyliodrin STUDIO <%= studio.version %> <%= studio.downloads[s].title %></a></li>
+                                    <% } %>
+                                    <li><a href="https://chrome.google.com/webstore/detail/wyliodrin-studio/eajalplbgimhaodcnncciojhbpcogkan" onclick="event_studio_download('chrome')">Chromebook</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="https://www.github.com/Wyliodrin/WyliodrinSTUDIO" onclick="event_studio_github()">Fork on gitHub</a></li>
+							<li><a href="https://studio.wyliodrin.com" onclick="event_more_info ('studio', 'download')">More info</a></li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
+                <div class="icon-prod right ip1">
+                  <div>
+                    <span class="helper"></span>
+                    <img src="/images/wstudio-icon.png" class="main-icon">
+                    <img src="/images/circle1.png" class="circle1" style="rotate(125deg); -webkit-transform: rotate(125deg); transform: rotate(125deg);">
+                    <img src="/images/circle2.png" class="circle2" style="rotate(305deg); -webkit-transform: rotate(305deg); transform: rotate(305deg);">
+                  </div>
+                  <h2>Wyliodrin<br>STUDIO</h2>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12 prod">
+                <div class="studio-box">
+                  <img src="/images/studio.png">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="maincontent">
+        <div class="col-md-12">
+          <div class="container">
+                <div class="col-md-6 featuretxt">
+                    <h1>Notebook - An interactive tutorial on how to build the application</h1>
+                    <p>Write labs, exercises sheets and handouts directly in the project, allow students to follow several steps so that they can better understand how to write and set up the application that they need to build.</p>
+                </div>
+                <div class="col-md-6 featureimg">
+                    <img src="/images/screens/notebook.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 greybg">
+          <div class="container">
+                <div class="col-md-6 featuretxt">
+                    <h1>Application - Write code in your favorite visual or text language</h1>
+                    <p>Write code in visual programming languages, python, javascript or just plain shell script. Besides the code that runs on the Linux device, you can write, compile and deploy several firmwares like Arduino or OpenMote.</p>
+                </div>
+                <div class="col-md-6 featureimg">
+                    <img src="/images/screens/application.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+          <div class="container">
+                <div class="col-md-6 featuretxt">
+                    <h1>Dashboard  - Visualise data signals</h1>
+                    <p>View data signals collected from devices in an interactive dashboard. Select the best data display from a variety of graphs like lines, gauges or event custom made displays.</p>
+                </div>
+                <div class="col-md-6 featureimg">
+                    <img src="/images/screens/dashboard.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 greybg">
+          <div class="container">
+                <div class="col-md-6 featuretxt">
+                    <h1>Schematics - Upload your project's schematics</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-6 featureimg">
+                    <img src="/images/screens/schematics.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+          <div class="container">
+                <div class="col-md-6 featuretxt">
+                    <h1>File Manager - Create new folder and files as you need</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-6 featureimg">
+                    <img src="/images/screens/filemanager.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 greybg">
+          <div class="container">
+                <div class="col-md-6 featuretxt">
+                    <h1>Shell - For advanced users</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-6 featureimg">
+                    <img src="/images/screens/shell.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+          <div class="container">
+                <div class="col-md-6 featuretxt">
+                    <h1>Management - Easily connect to the internet and/or install/remove libraries</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="col-md-6 featureimg">
+                    <img src="/images/screens/manager.png">
+                </div>
+            </div>
+        </div>
+      </section>
+
+        <% include universities %>
+
+        <% include clients2 %>
+
+        <% include footer %>
+
+        <script src="/js/custom.js"></script>
+
+        <% include tawkto %>
+
+      </body>
+      </html>

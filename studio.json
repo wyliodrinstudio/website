@@ -1,0 +1,31 @@
+{
+	"version":"12.5",
+	"downloads":
+	{
+		"win32":
+		{
+			"download":"https://s3.us-east-2.amazonaws.com/wyliodrin-studio/WyliodrinSTUDIO-win32-12.5.zip",
+			"title":"Windows (32 bit)"
+		},
+		"win64":
+		{
+			"download":"https://s3.us-east-2.amazonaws.com/wyliodrin-studio/WyliodrinSTUDIO-win64-12.5.zip",
+			"title":"Windows (64 bit)"
+		},
+		"linux32":
+		{
+			"download":"https://s3.us-east-2.amazonaws.com/wyliodrin-studio/WyliodrinSTUDIO-i386-12.5.AppImage",
+			"title":"Linux (32 bit)"
+		},
+		"linux64":
+		{
+			"download":"https://s3.us-east-2.amazonaws.com/wyliodrin-studio/WyliodrinSTUDIO-x86_64-12.5.AppImage",
+			"title":"Linux (64 bit)"
+		},
+		"mac64":
+		{
+			"download":"https://s3.us-east-2.amazonaws.com/wyliodrin-studio/WyliodrinSTUDIO-macOS-12.5.zip",
+			"title":"Mac OS X (64 bit)"
+		}
+	}
+}

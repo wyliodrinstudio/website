@@ -1,0 +1,8 @@
+<div class="container blog-box">
+	<div style="display:flex;">
+		<h2 class="text-left" style="flex:1 1 auto;"><a href="<%= post.url %>" title="<%= post.title %>"><%=post.title%></a></h2>
+		<span class="author-blog" style="flex:0 0 auto;">by <strong><%= post.author %></strong></span>
+		<span class="author-blog" style="flex:0 0 auto;">&nbsp;(<%= moment(post.date).fromNow() %>)</span>
+	</div>
+	<div><%- post.preview.replace (new RegExp ('<h2[^>]*>.*<\/h2>'), '') %></div>
+</div>
